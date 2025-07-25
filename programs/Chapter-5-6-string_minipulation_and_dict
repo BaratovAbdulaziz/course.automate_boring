@@ -1,0 +1,69 @@
+# Global dictionary to store user login information
+log_in = {}
+
+# Global status variable to track successful login
+status = False
+
+# Function to handle user registration
+def sign_up():
+    global log_in  # Use the global login dictionary
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
+    secret = input("Enter your secret key: ")
+
+    # Validate that the name is not just numeric
+    if not name.isdigit():
+        # Store user info with the name as key
+        log_in[name] = {
+            "password": password,
+            "s_key": secret  # Use consistent key name: 's_key'
+        }
+        print("Sign up complete!")
+    else:
+        # If name contains only numbers, reject it
+        print("Name should not consist of only numbers.")
+
+# Function to handle login or registration process
+def sign_in():
+    global log_in, status  # Reference both global variables
+
+    # Continue until login is successful
+    while not status:
+        # Ask the user if they already have an account
+        checkpoint1 = input("Do you have an account? (Y/N): ").lower()
+
+        if checkpoint1 == "n":
+            # If user doesn't have an account, sign them up
+            sign_up()
+
+        elif checkpoint1 == "y":
+            # If user has an account, prompt for login credentials
+            N_login = input("Enter your name: ")
+
+            # Check if the username exists in the login dictionary
+            if N_login in log_in:
+                P_login = input("Enter your password: ")
+
+                # If password matches, login is successful
+                if P_login == log_in[N_login]["password"]:
+                    status = True
+                    print("Login complete.")
+
+                else:
+                    # If password is incorrect, ask for secret key as a fallback
+                    print("Password incorrect. Please enter your secret key to verify:")
+                    l_secret_key = input("Secret key: ")
+
+                    # Verify the secret key
+                    if l_secret_key == log_in[N_login]["s_key"]:
+                        print("Verification successful. Logged in.")
+                        status = True
+                    else:
+                        print("Secret key incorrect.")
+            else:
+                # If username not found
+                print("Username not found. Please restart or sign up.")
+
+        else:
+            # Handle any input other than 'y' or 'n'
+            print("Invalid input. Please enter 'Y' or 'N'.")
