@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enhanced BeautifulSoup Test Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f0f2f5, #dfe6e9);
+            color: #2d3436;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: #0984e3;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        section {
+            background-color: white;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        h1, h2 {
+            color: #0984e3;
+        }
+
+        p.description {
+            padding: 0.5rem 1rem;
+            border-left: 4px solid #74b9ff;
+            background-color: #f1f2f6;
+            margin-bottom: 1rem;
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #0984e3;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        ul#fruits {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul#fruits li {
+            padding: 0.5rem;
+            background: #dfe6e9;
+            margin: 0.3rem 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        form {
+            margin-top: 1.5rem;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BeautifulSoup Practice Page</h1>
+        <p>A colorful and rich HTML document for scraping practice</p>
+    </header>
+
+    <section>
+        <h2>About This Page</h2>
+        <p class="description">This paragraph is styled and has the class "description".</p>
+        <p class="description">Another descriptive paragraph for testing multiple matches.</p>
+        <a href="https://example.com/about" class="button">Read More</a>
+    </section>
+
+    <section>
+        <h2>Fruits List</h2>
+        <ul id="fruits">
+            <li>🍏 Green Apple</li>
+            <li>🍇 Grape</li>
+            <li>🥝 Kiwi</li>
+            <li>🍊 Orange</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Data Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Notebook</td>
+                    <td>2</td>
+                    <td>5.50</td>
+                </tr>
+                <tr>
+                    <td>Pen</td>
+                    <td>10</td>
+                    <td>1.20</td>
+                </tr>
+                <tr>
+                    <td>Marker</td>
+                    <td>4</td>
+                    <td>2.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Contact Us</h2>
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+</body>
+</html>
